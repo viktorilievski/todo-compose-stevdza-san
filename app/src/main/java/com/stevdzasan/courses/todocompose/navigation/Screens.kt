@@ -1,0 +1,16 @@
+package com.stevdzasan.courses.todocompose.navigation
+
+import androidx.navigation.NavHostController
+import com.stevdzasan.courses.todocompose.util.Action
+import com.stevdzasan.courses.todocompose.util.Constants.LIST_SCREEN
+
+class Screens(navController: NavHostController) {
+    val list: (Action) -> Unit = { action ->
+        navController.navigate("list/${action.name}") {
+            popUpTo(LIST_SCREEN) { inclusive = true }
+        }
+    }
+    val task: (Int) -> Unit = { taskId ->
+        navController.navigate("task/${taskId}")
+    }
+}
