@@ -50,7 +50,9 @@ fun ListAppBar(
                 onCloseClicked = {
                     sharedViewModel.searchAppBarOnCloseClick()
                 },
-                onSearchClicked = {}
+                onSearchClicked = {
+                    sharedViewModel.searchDatabase(searchQuery = it)
+                }
             )
         }
     }
