@@ -54,7 +54,7 @@ fun NewTaskAppBar(
 fun BackAction(
     onBackClicked: (Action) -> Unit
 ) {
-    IconButton(onClick = { onBackClicked(Action.NO_ACTION) }) {
+    IconButton(onClick = { onBackClicked(Action.GO_BACK) }) {
         Icon(
             imageVector = Icons.Filled.ArrowBack,
             contentDescription = stringResource(R.string.back_arrow),
@@ -105,7 +105,7 @@ fun ExistingTaskAppBar(
 fun CloseAction(
     onCloseClicked: (Action) -> Unit
 ) {
-    IconButton(onClick = { onCloseClicked(Action.NO_ACTION) }) {
+    IconButton(onClick = { onCloseClicked(Action.GO_BACK) }) {
         Icon(
             imageVector = Icons.Filled.Close,
             contentDescription = stringResource(R.string.close_icon),
