@@ -26,7 +26,7 @@ fun TaskScreen(
         topBar = {
             TaskAppBar(
                 navigateToListScreen = { action ->
-                    if (action == Action.GO_BACK) {
+                    if (action == Action.NO_ACTION) {
                         navigateToListScreen(action)
                     } else {
                         if (sharedViewModel.validateFields()) {
