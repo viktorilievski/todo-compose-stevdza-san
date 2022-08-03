@@ -1,6 +1,5 @@
 package com.stevdzasan.courses.todocompose.navigation.destinations
 
-import android.util.Log
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
