@@ -7,6 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.stevdzasan.courses.todocompose.R
+import com.stevdzasan.courses.todocompose.data.models.ToDoTask
 import com.stevdzasan.courses.todocompose.ui.theme.fabBackgroundColor
 import com.stevdzasan.courses.todocompose.ui.viewmodels.SharedViewModel
 import com.stevdzasan.courses.todocompose.util.Action
@@ -20,11 +21,16 @@ fun ListScreen(
 ) {
     LaunchedEffect(key1 = true) {
         sharedViewModel.getAllTasks()
+        sharedViewModel.readSortState()
     }
     val action by sharedViewModel.action
 
     val allTasks by sharedViewModel.allTasks.collectAsState()
     val searchedTasks by sharedViewModel.searchedTasks.collectAsState()
+    val sortState by sharedViewModel.sortState.collectAsState()
+    val lowPriorityTasks by sharedViewModel.lowPriorityTasks.collectAsState()
+    val highPriorityTasks by sharedViewModel.highPriorityTasks.collectAsState()
+
 
     val searchAppBarState: SearchAppBarState by sharedViewModel.searchAppBarState
     val searchTextState: String by sharedViewModel.searchTextState
@@ -54,7 +60,14 @@ fun ListScreen(
             ListContent(
                 allTasks = allTasks,
                 searchedTasks = searchedTasks,
+                lowPriorityTasks = lowPriorityTasks,
+                highPriorityTasks = highPriorityTasks,
+                sortState = sortState,
                 searchedAppBarState = searchAppBarState,
+                onSwipeToDelete = { action, task ->
+                    sharedViewModel.action.value = action
+                    sharedViewModel.updateTaskFields(selectedTask = task)
+                },
                 navigateToTaskScreen = navigateToTaskScreen
             )
         },
