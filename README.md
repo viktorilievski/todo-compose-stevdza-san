@@ -1,7 +1,7 @@
 # To-Do App with Jetpack Compose MVVM - Android Development
 To Do app Course using MVVM and Jetpack Compose. Mentor of the course is Stefan Jovanović. This course has been bought from https://www.stevdza-san.com
 
-## Course completion: 82%
+## Course completion: 90%
 
 You can find this course [on his personal page](https://www.stevdza-san.com/p/to-do-app-with-jetpack-compose-mvvm-android-development) or [here on Udemy](https://www.udemy.com/course/to-do-app-with-jetpack-compose-mvvm-android-development/)
 
